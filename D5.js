@@ -15,56 +15,123 @@
    Create a variable test that contains a string.
 */
 
+const test = `Hello`;
+console.log(test);
+
 /* Ex.B
     Create a variable sum that contains the result of the sum between 10 and 20.
 */
+
+const sum = 10 + 20;
+console.log(sum);
 
 /* Ex.C 
     Create a variable random that contains a random number between 0 and 20 (should be randomly created at each execution).
 */
 
+const random = Math.floor(Math.random() * 21);
+console.log(random);
+
 /* Ex.D
     Create a variable me containing and object with the current information: name = your name, surname = your surname, age = your age.
 */
+
+const me = { name: `Antoni`, surname: `Stoilkov`, age: 30 };
+console.log(me);
 
 /* Ex.E 
     Programmatically remove the age property from the previously create object.
 */
 
+delete me.age;
+console.log(me);
+
 /* Ex.F 
    Programmatically add to the object me an array "skills" that contains the programming languages that you know.
 */
 
+me.skills = [`HTMLA`, `CSS`, `JS`];
+console.log(me);
+
 /* Ex.G 
    Programmatically remove the last skill from the array "skills" inside of the "me" object.
 */
+
+me.skills.pop();
+console.log(me);
 
 // JS Functions
 /* Ex.1
     Write the function dice that randomize an integer number between 1 and 6.
 */
 
+function dice(x) {
+  const result = Math.floor(Math.random() * 6) + 1;
+  return result;
+}
+console.log(dice(-55));
+
 /* Ex.2 
     Write the function whoIsBigger that receives 2 numbers and returns the bigger of the two.
 */
+
+function whoIsBigger(a, b) {
+  if (a>b) {
+    console.log(a);
+  } else {
+    console.log(b);
+  }
+}
+whoIsBigger(4,1);
 
 /* Ex.3
     Write the function splitMe that receives a string and returns an array with every word in that string.
     Ex. splitMe("I love coding") => returns [ "I","Love","Coding"]
 */
 
+function splitMe(x) {
+  const stringToSplit = x.split(` `);
+  return stringToSplit;
+}
+console.log(splitMe(`how are you doing`));
+
 /* Ex.4
     Write the function deleteOne that receives a string and a boolean. If the boolean is true it should return the string without the first letter, otherwise it should remove the last one.
 */
+
+function deleteOne(x, y) {
+  if (y === true) {
+    console.log(x.substring(1));
+  } else {
+    console.log(x.slice(0, -1))
+  }
+}
+deleteOne(`how`, true);
 
 /* Ex.5
    Write the function onlyLetters that receives a string, removes all the numbers and returns it.
    Ex.: onlyLetters("I love 123 whatever")  => returns "I love whatever"
 */
 
+function onlyLetters(x) {
+  const result = x.replace(/\d+/g, ``);
+  return result
+}
+console.log(onlyLetters(`I have 3 dogs 3`));
+
 /* Ex.6 
    Write the function isThisAnEmail that receives a string and returns true if the string is a valid email.
 */
+
+function isThisAnEmail(x) {
+  const mailFormat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  if (x.value.match(mailFormat)) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
+}
+isThisAnEmail(`kkggg.gj`); // not working
 
 /* Ex.7
    Write the function whatDayIsIt that should return the current day of the week.
@@ -268,4 +335,4 @@ const movies = [
     Poster:
       "https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_SX300.jpg",
   },
-]
+];
